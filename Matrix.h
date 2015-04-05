@@ -14,6 +14,9 @@ public:
 	Matrix();
 	void cargarM(int fil, int col);
 	void llenarMceros();
+
+	void colors2Down();
+
 	void printM();
 
 	~Matrix();

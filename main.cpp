@@ -26,8 +26,9 @@ int main()
 
     cout << "Hello world!" << endl;
     Matrix grid;
-    grid.cargarM(3,3);
+    grid.cargarM(3,4);
     grid.llenarMceros();
+    grid.colors2Down();
     grid.printM();
 
     return 0;
