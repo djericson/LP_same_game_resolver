@@ -25,5 +25,10 @@ int main()
 
 
     cout << "Hello world!" << endl;
+    Matrix grid;
+    grid.cargarM(3,3);
+    grid.llenarMceros();
+    grid.printM();
+
     return 0;
 }
