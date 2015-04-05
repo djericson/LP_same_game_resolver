@@ -29,6 +29,7 @@ int main()
     grid.cargarM(3,4);
     grid.llenarMceros();
     grid.colors2Down();
+    grid.moverLados();
     grid.printM();
 
     return 0;

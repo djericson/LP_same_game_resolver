@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1428192350 source:e:\cursos\lp\lp_same_game_resolver\main.cpp
+1428207019 source:e:\cursos\lp\lp_same_game_resolver\main.cpp
 	<iostream>
 	"matrix.h"
 
-1428192314 e:\cursos\lp\lp_same_game_resolver\matrix.h
+1428259785 e:\cursos\lp\lp_same_game_resolver\matrix.h
 	<iostream>
 
-1428192452 source:e:\cursos\lp\lp_same_game_resolver\matrix.cpp
+1428259785 source:e:\cursos\lp\lp_same_game_resolver\matrix.cpp
 	"Matrix.h"
 
 1428196410 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\main.cpp

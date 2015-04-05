@@ -15,6 +15,13 @@ public:
 	void cargarM(int fil, int col);
 	void llenarMceros();
 
+    int buscarCceros();
+    void moverDerecha(int pos);
+    void moverIzquierda(int pos);
+    void moverLados();
+
+
+
 	void colors2Down();
 
 	void printM();
