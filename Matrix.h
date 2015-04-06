@@ -9,6 +9,7 @@ class Matrix
 public:
 	int f, c;
 	int ** m;
+	int ** m_pos;
 
 	//Matrix(int fil, int col);
 	Matrix();
