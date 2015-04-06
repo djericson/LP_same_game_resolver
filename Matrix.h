@@ -21,7 +21,7 @@ public:
     void moverIzquierda(int pos);
     void moverLados();
 
-
+    void buscarGrupo(int x, int y);
 
 	void colors2Down();
 

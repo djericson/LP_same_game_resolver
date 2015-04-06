@@ -117,7 +117,9 @@ void Matrix::moverIzquierda(int pos){
 void Matrix::moverLados(){
 
 
-    int m3[3][4]= {{0, 1, 3, 1}, {0, 0, 0, 3}, {0, 3, 3, 1}};
+    int m3[3][4]= {{1, 1, 3, 1},
+                   {1, 0, 0, 3},
+                   {1, 3, 3, 1}};
 
 
     for(int i = 0; i < f; i++){
@@ -149,6 +151,29 @@ void Matrix::moverLados(){
 
 
 
+}
+
+void Matrix::buscarGrupo(int x, int y){
+
+    if(((x >= 0) && (x < f)) && ((y >= 0) && (y < c))){
+        int conte = m[x][y];
+        m[x][y] = -3;
+        if((x + 1 < f) && (m[x + 1][y] == conte)){
+            buscarGrupo(x + 1, y);
+        }
+        if((x - 1 >= 0) && (m[x - 1][y] == conte)){
+            buscarGrupo(x - 1, y);
+        }
+        if((y + 1 < c) && (m[x][y + 1] == conte)){
+            buscarGrupo(x, y + 1);
+        }
+        if((y - 1 >= 0) && (m[x][y - 1] == conte)){
+            buscarGrupo(x, y - 1);
+        }
+
+    }
+
+    return;
 }
 
 void Matrix::printM()

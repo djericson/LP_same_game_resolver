@@ -28,8 +28,23 @@ int main()
     Matrix grid;
     grid.cargarM(3,4);
     grid.llenarMceros();
-    grid.colors2Down();
-    grid.moverLados();
+
+    int m3[3][4]= {{1, 1, 3, 1},
+                   {1, 0, 3, 3},
+                   {1, 3, 3, 1}};
+
+
+    for(int i = 0; i < 3; i++){
+        //m[i] = m3[i];
+        for(int j = 0; j < 4; j++){
+            grid.m[i][j] = m3[i][j];
+        }
+    }
+
+    //grid.colors2Down();
+    //grid.moverLados();
+    grid.printM();
+    grid.buscarGrupo(1,2);
     grid.printM();
 
     return 0;
