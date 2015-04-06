@@ -156,24 +156,92 @@ void Matrix::moverLados(){
 void Matrix::buscarGrupo(int x, int y){
 
     if(((x >= 0) && (x < f)) && ((y >= 0) && (y < c))){
+        if(m_pos[x][y] == 1) return;
         int conte = m[x][y];
-        m[x][y] = -3;
+        m_pos[x][y] = 1;
+        if(m_pos[x][y] == 1)
+            m[x][y] = 0;
         if((x + 1 < f) && (m[x + 1][y] == conte)){
+            m[x + 1][y] = 0;
+            v_p.push_back(Posicion(x + 1, y) );
             buscarGrupo(x + 1, y);
         }
         if((x - 1 >= 0) && (m[x - 1][y] == conte)){
+            m[x -1][y] = 0;
+            v_p.push_back(Posicion(x - 1, y) );
             buscarGrupo(x - 1, y);
         }
         if((y + 1 < c) && (m[x][y + 1] == conte)){
+            m[x][y + 1] = 0;
+            v_p.push_back(Posicion(x, y + 1) );
             buscarGrupo(x, y + 1);
         }
         if((y - 1 >= 0) && (m[x][y - 1] == conte)){
+            m[x][y - 1] = 0;
+            v_p.push_back(Posicion(x, y -1) );
             buscarGrupo(x, y - 1);
         }
 
     }
 
     return;
+}
+
+void Matrix::solver(){
+	int posIni = 0;
+	int pos_x = posIni;
+	int pos_y = posIni;
+	int nro_despl = 2;
+	m_pos[posIni][posIni] = 1;
+	int q;
+
+	backtrack(pos_x, pos_y, nro_despl, &q);
+	printM();
+
+}
+
+void Matrix::backtrack(int px, int py, int cont, int *q)
+{
+	printM();
+	int x, y, e;
+	//hay_solucion = 0;
+	*q = 0;
+	//e = 0;
+	do{
+	    int x, y;
+
+	    for(int i = 0; i < f; i++){
+            for(int j = 0;j < c; j++){
+                if(m_pos[i][j] == 0){
+                    x = i;
+                    y = j;
+                    break;
+                }
+            }
+        }
+
+	    buscarGrupo(x, y);
+	    colors2Down();
+	    moverLados();
+
+		if(x >= 0 && x < f && y>= 0 &&  y < c ){
+			if(m[x][y]==0){
+				m[x][y] = cont;
+				if(cont < f*c){
+
+					backtrack(x, y, cont+1, q);
+					if (!*q/*hay_solucion==0*/){
+
+						//restaurar ultimo grupo de pos. cambiados en mpos a 0;
+                    }
+				}
+				else
+					*q = 1;//hay_solucion = 1;
+			}
+		}
+		e++;
+	}
+	while(/*hay_solucion==0*/ !*q && e<f);
 }
 
 void Matrix::printM()

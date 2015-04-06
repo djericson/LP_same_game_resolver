@@ -9,13 +9,14 @@
 1428301231 source:e:\cursos\lp\lp_same_game_resolver\matrix.cpp
 	"Matrix.h"
 
-1428196410 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\main.cpp
+1428356545 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\main.cpp
 	<iostream>
 	"matrix.h"
 
-1428194552 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.h
+1428356174 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.h
 	<iostream>
+	<vector>
 
-1428194727 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.cpp
+1428356268 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.cpp
 	"Matrix.h"
 
