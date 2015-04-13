@@ -1,6 +1,6 @@
 #ifndef MATRIX_H
 #define MATRIX_H
-
+#include <stack>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -25,6 +25,7 @@ public:
 	int ** m_pos;
 
 	vector<Posicion> v_p;
+	stack<Posicion> pila_pos;
 	//Matrix(int fil, int col);
 	Matrix();
 	void cargarM(int fil, int col);

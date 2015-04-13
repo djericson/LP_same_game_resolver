@@ -159,29 +159,40 @@ void Matrix::buscarGrupo(int x, int y){
         if(m_pos[x][y] == 1) return;
         int conte = m[x][y];
         m_pos[x][y] = 1;
-        if(m_pos[x][y] == 1)
-            m[x][y] = 0;
+        //if(m_pos[x][y] == 1)
+        //    m[x][y] = 0;
         if((x + 1 < f) && (m[x + 1][y] == conte)){
-            m[x + 1][y] = 0;
+            //m[x + 1][y] = 0;
             v_p.push_back(Posicion(x + 1, y) );
+            pila_pos.push(Posicion(x + 1, y) );
             buscarGrupo(x + 1, y);
         }
         if((x - 1 >= 0) && (m[x - 1][y] == conte)){
-            m[x -1][y] = 0;
+            //m[x -1][y] = 0;
             v_p.push_back(Posicion(x - 1, y) );
+            pila_pos.push(Posicion(x - 1, y) );
             buscarGrupo(x - 1, y);
         }
         if((y + 1 < c) && (m[x][y + 1] == conte)){
-            m[x][y + 1] = 0;
+            //m[x][y + 1] = 0;
             v_p.push_back(Posicion(x, y + 1) );
+            pila_pos.push(Posicion(x, y + 1) );
+
             buscarGrupo(x, y + 1);
         }
         if((y - 1 >= 0) && (m[x][y - 1] == conte)){
-            m[x][y - 1] = 0;
-            v_p.push_back(Posicion(x, y -1) );
+            //m[x][y - 1] = 0;
+            v_p.push_back(Posicion(x, y - 1) );
+            pila_pos.push(Posicion(x, y - 1) );
             buscarGrupo(x, y - 1);
         }
 
+    }
+
+    while(pila_pos.empty() == 0){
+        Posicion pos_tmp = pila_pos.top();
+        m[pos_tmp.x][pos_tmp.y] = 0;
+        pila_pos.pop();
     }
 
     return;
@@ -246,11 +257,23 @@ void Matrix::backtrack(int px, int py, int cont, int *q)
 
 void Matrix::printM()
 {
+    cout<<"Matriz de Valores";
+
 	for(int i = 0; i < f; i++)
 	{
 		cout<<endl;
 		for(int j = 0;j < c; j++)
 			cout<<m[i][j]<<'\t';
+	}
+	cout<<endl<<endl;
+
+	cout<<"Matriz de Posiciones";
+
+	for(int i = 0; i < f; i++)
+	{
+		cout<<endl;
+		for(int j = 0;j < c; j++)
+			cout<<m_pos[i][j]<<'\t';
 	}
 	cout<<endl;
 }
