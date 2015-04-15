@@ -1,49 +1,50 @@
 #ifndef MATRIX_H
 #define MATRIX_H
-#include <stack>
+
 #include <iostream>
 #include <vector>
+#include <stack>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include "posicion.h"
+#include "memento.h"
+#include "fotografo.h"
 using namespace std;
 
-struct Posicion
-{
-    int x;
-    int y;
-    Posicion(){};
-    Posicion(int _x, int _y){
-        x = _x;
-        y= _y;
-    }
-
-};
+class Memento;
 
 class Matrix
 {
 public:
 	int f, c;
-	int ** m;
-	int ** m_pos;
-
-	vector<Posicion> v_p;
+	int** m; //matriz principal..
+	int** m_pos; //matriz de ceros y unos, inicialmente solo ceros
+	Posicion* curr_pos; //coordenadas actuales en la matriz, sobre la que se intenta obtener un grupo a partir de el
+	Fotografo* fotografo;
+	vector<Posicion> v_p; //para almacenar una lista de coordenadas de un grupo en cierto momento
 	stack<Posicion> pila_pos;
 	//Matrix(int fil, int col);
 	Matrix();
-	void cargarM(int fil, int col);
-	void llenarMceros();
-
+	void crearM(int fil, int col);
+	void cargarMfromFile();
+	void cpy_m2m(int** pm); //copia contenido
+	bool non_block;
+	int cont_non_visited;
     void solver();
     void backtrack(int p_x, int p_y, int cont, int* q);
-    int buscarCceros();
-    void moverDerecha(int pos);
+    void colors2Down();
+	int buscarCceros();
+    void buscarGrupo(int x, int y);
+	void moverDerecha(int pos);
     void moverIzquierda(int pos);
     void moverLados();
 
-    void buscarGrupo(int x, int y);
-
-	void colors2Down();
-
 	void printM();
 
+	Memento* guardar2Memento(); //devuelve un objeto memento que se tomara como paramatero para añadirlo a la lista de mementos, con la fn del fotografo
+	void deshacerMemento(Memento* m); //obtiene el ultimo estdo anterior de memento y lo reasigna a los matributos de esta clase
+	friend class Memento;
 	~Matrix();
 };
 #endif

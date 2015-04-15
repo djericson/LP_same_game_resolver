@@ -9,16 +9,23 @@
 1428301231 source:e:\cursos\lp\lp_same_game_resolver\matrix.cpp
 	"Matrix.h"
 
-1428356545 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\main.cpp
+1429107685 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\main.cpp
 	<iostream>
 	"matrix.h"
 
-1428356174 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.h
+1429107753 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.h
 	<iostream>
 	<vector>
+	<stack>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	"posicion.h"
+	"memento.h"
+	"fotografo.h"
 
-1428356268 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.cpp
-	"Matrix.h"
+1429107652 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\matrix.cpp
+	"matrix.h"
 
 1428960563 source:c:\users\alumno-d\desktop\lp_same_game_resolver\main.cpp
 	<iostream>
@@ -31,4 +38,20 @@
 
 1428960562 source:c:\users\alumno-d\desktop\lp_same_game_resolver\matrix.cpp
 	"Matrix.h"
+
+1428956745 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\posicion.h
+
+1429107721 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\memento.h
+	"posicion.h"
+
+1428961519 c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\fotografo.h
+	<iostream>
+	<list>
+	"memento.h"
+
+1429107721 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\memento.cpp
+	"memento.h"
+
+1428961519 source:c:\users\ea88win7sp1-nb\documents\lp_same_game_resolver\fotografo.cpp
+	"fotografo.h"
 
